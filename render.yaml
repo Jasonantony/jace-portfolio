@@ -3,7 +3,7 @@ services:
     name: jace-portfolio
     env: python
     buildCommand: pip install -r requirements.txt
-    startCommand: gunicorn portfolio.wsgi:application
+    startCommand: gunicorn dportfolio.wsgi:application
     envVars:
       - key: DJANGO_SETTINGS_MODULE
         value: portfolio.settings
