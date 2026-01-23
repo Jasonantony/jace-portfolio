@@ -1,0 +1,237 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Jason Antony | Portfolio</title>
+
+  <link rel="stylesheet" href="{% static 'main/css/style.css' %}">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+
+<body>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-text" data-aos="fade-right">
+    <h2>From Idea to <span>Execution</span></h2>
+    <h1>JASON ANTONY M</h1>
+    <p>
+      Python Full Stack Developer building automation platforms,
+      management systems, and scalable applications.
+    </p>
+
+    <div class="hero-actions">
+      <a href="#projects">View Projects</a>
+      <a href="#contact" class="outline">Contact</a>
+    </div>
+  </div>
+
+  <div class="hero-card" data-aos="fade-left">
+    <div class="photo-glass">
+      <img src="{% static 'main/img/profile.jpg' %}" alt="Jason Antony">
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT + STACK -->
+<section class="grid">
+  <div class="glass" data-aos="fade-up">
+    <h2>About Me</h2>
+    <p>
+      Computer Science graduate and Python Full Stack Developer with
+      real-world experience in automation, billing, and management systems.
+    </p>
+  </div>
+
+  <div class="glass" data-aos="fade-up">
+    <h2>Tech Stack</h2>
+    <div class="tags">
+      <span>Python</span>
+      <span>Django</span>
+      <span>Flask</span>
+      <span>SQL</span>
+      <span>HTML</span>
+      <span>CSS</span>
+      <span>Linux</span>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects" class="projects">
+  
+  <div class="glass clickable" onclick="openCard('autovenuma')">
+    <h3>AutoVenuma</h3>
+    <p>Automation platform built using Django.</p>
+  </div>
+
+  <div class="glass clickable" onclick="openCard('attravels')">
+    <h3>AT Travels</h3>
+    <p>Travel booking and management system.</p>
+  </div>
+
+  <div class="glass clickable" onclick="openCard('grocery')">
+    <h3>Smart Grocery Billing System</h3>
+    <p>Voice billing with prepaid cards.</p>
+  </div>
+
+  <div class="glass clickable" onclick="openCard('school')">
+    <h3>Jace Schools</h3>
+    <p>School management system.</p>
+  </div>
+
+</section>
+
+
+<!-- EXPERIENCE -->
+<section class="grid">
+
+  <div class="glass clickable" onclick="openCard('skc')">
+    <h3>CRM Executive</h3>
+    <p>SKC</p>
+  </div>
+
+  <div class="glass clickable" onclick="openCard('blinkit')">
+    <h3>Supervisor</h3>
+    <p>Blinkit</p>
+  </div>
+
+</section>
+
+
+<!-- CONTACT -->
+<section id="contact" class="glass contact" data-aos="fade-up">
+  <h2>Let’s Build Something</h2>
+
+  <form method="post">
+    {% csrf_token %}
+    <input name="name" placeholder="Your Name" required>
+    <input name="email" placeholder="Your Email" required>
+    <textarea name="message" placeholder="Your Message" required></textarea>
+    <button>Send Message</button>
+  </form>
+</section>
+<div id="detail-overlay">
+
+  <!-- AutoVenuma -->
+  <div class="detail-card" id="autovenuma">
+    <span class="close" onclick="closeCard()">✕</span>
+    <h2>AutoVenuma</h2>
+    <p>
+      AutoVenuma is an automation platform designed to streamline
+      workflows and reduce manual operations.
+    </p>
+    <ul>
+      <li>Django-based backend architecture</li>
+      <li>Role-based access control</li>
+      <li>Scalable and modular design</li>
+      <li>API integrations for automation</li>
+    </ul>
+  </div>
+
+  <!-- AT Travels -->
+  <div class="detail-card" id="attravels">
+    <span class="close" onclick="closeCard()">✕</span>
+    <h2>AT Travels</h2>
+    <p>
+      A travel booking and management system that handles
+      customer bookings, admin workflows, and trip management.
+    </p>
+    <ul>
+      <li>Booking & trip management</li>
+      <li>Admin dashboard</li>
+      <li>Customer data handling</li>
+    </ul>
+  </div>
+
+  <div class="detail-card" id="grocery">
+  <span class="close" onclick="closeCard()">✕</span>
+  <h2>Smart Grocery Billing System</h2>
+
+  <p>
+    A smart billing system aimed at modernizing grocery stores using
+    automation, prepaid cards, and intelligent billing workflows.
+  </p>
+
+  <ul>
+    <li>Implemented voice-based billing logic for faster checkout</li>
+    <li>Designed prepaid card system for regular customers</li>
+    <li>Automated bill calculation and inventory tracking</li>
+    <li>Planned analytics features for sales and stock monitoring</li>
+  </ul>
+
+  <p><strong>Tech Stack:</strong> Python, Django, SQL, HTML, CSS</p>
+</div>
+
+
+
+  <!-- Jace Schools -->
+  <div class="detail-card" id="school">
+    <span class="close" onclick="closeCard()">✕</span>
+    <h2>Jace Schools</h2>
+    <p>
+      A complete school management system for handling students,
+      staff, academics, and administration.
+    </p>
+    <ul>
+      <li>Student & staff management</li>
+      <li>Attendance & academics</li>
+      <li>Secure role-based access</li>
+    </ul>
+  </div>
+
+  <!-- SKC -->
+  <div class="detail-card" id="skc">
+    <span class="close" onclick="closeCard()">✕</span>
+    <h2>CRM Executive – SKC</h2>
+    <p>
+      Responsible for customer relationship management, data
+      coordination, and operational reporting.
+    </p>
+    <ul>
+      <li>Customer data handling</li>
+      <li>CRM tools & reporting</li>
+      <li>Inter-department coordination</li>
+    </ul>
+  </div>
+
+  <!-- Blinkit -->
+  <div class="detail-card" id="blinkit">
+    <span class="close" onclick="closeCard()">✕</span>
+    <h2>Supervisor – Blinkit</h2>
+    <p>
+      Supervised operations, managed teams, and ensured smooth
+      workflow execution in a fast-paced environment.
+    </p>
+    <ul>
+      <li>Team supervision</li>
+      <li>Operational efficiency</li>
+      <li>Daily reporting & coordination</li>
+    </ul>
+  </div>
+
+</div>
+
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init({ once: true, duration: 900 });
+</script>
+<script>
+  function openCard(id) {
+    document.getElementById("detail-overlay").style.display = "flex";
+    document.getElementById(id).style.display = "block";
+  }
+
+  function closeCard() {
+    document.getElementById("detail-overlay").style.display = "none";
+    document.querySelectorAll(".detail-card").forEach(card => {
+      card.style.display = "none";
+    });
+  }
+</script>
+
+
+</body>
+</html>
